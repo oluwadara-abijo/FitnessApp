@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Fitness App</string>
+    <string name="hey_here">Hey there</string>
+    <string name="create_an_account">Create an Account</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="privacy_policy">By continuing you accept our Privacy Policy and Term of Use</string>
+    <string name="person_icon">Person icon</string>
+    <string name="email_icon">Email Icon</string>
+    <string name="lock_icon">Lock Icon</string>
+    <string name="password_visibility_icon">Password Visibility Icon</string>
+    <string name="title_activity_goals_set_up">GoalsSetUpActivity</string>
 </resources>
