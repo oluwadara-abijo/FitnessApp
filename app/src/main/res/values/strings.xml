@@ -12,4 +12,5 @@
     <string name="lock_icon">Lock Icon</string>
     <string name="password_visibility_icon">Password Visibility Icon</string>
     <string name="title_activity_goals_set_up">GoalsSetUpActivity</string>
+    <string name="title_activity_signup">SignupActivity</string>
 </resources>
