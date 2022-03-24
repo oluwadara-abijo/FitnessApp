@@ -13,4 +13,14 @@
     <string name="password_visibility_icon">Password Visibility Icon</string>
     <string name="title_activity_goals_set_up">GoalsSetUpActivity</string>
     <string name="title_activity_signup">SignupActivity</string>
+    <string name="next">Next</string>
+    <string name="cm_measurement">CM</string>
+    <string name="your_height">Your Height</string>
+    <string name="kg_measurement">KG</string>
+    <string name="your_weight">Your Weight</string>
+    <string name="date_of_birth">Date of Birth</string>
+    <string name="choose_gender">Choose Gender</string>
+    <string name="profile_registration_screen_sub_title">It will help us to know more about you!</string>
+    <string name="profile_registration_screen_title">Let’s complete your profile</string>
+    <string name="profile_section_description">Profile Section</string>
 </resources>
