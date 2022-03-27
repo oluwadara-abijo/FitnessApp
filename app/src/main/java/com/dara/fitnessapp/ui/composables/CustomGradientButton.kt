@@ -18,6 +18,7 @@ import androidx.compose.ui.graphics.Color.Companion.Transparent
 import androidx.compose.ui.graphics.Color.Companion.White
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.dara.fitnessapp.ui.theme.BluePrimary
 import com.dara.fitnessapp.ui.theme.BlueSecondary
@@ -29,12 +30,15 @@ fun CustomGradientButton(
     text: String,
     textColor: Color,
     gradient: Brush,
-    onClick: () -> Unit
+    paddingHorizontal: Dp = 0.dp,
+    paddingVertical: Dp = 0.dp,
+    onClick: () -> Unit,
 ) {
 
     Button(
         onClick = { onClick() },
         modifier = Modifier
+            .padding(paddingHorizontal, paddingVertical)
             .fillMaxWidth(),
         shape = Shapes.large,
         colors = ButtonDefaults.buttonColors(

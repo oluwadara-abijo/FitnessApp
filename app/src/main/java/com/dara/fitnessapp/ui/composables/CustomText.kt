@@ -6,6 +6,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
@@ -20,13 +21,15 @@ fun CustomText(
     paddingStart: Dp = 0.dp,
     paddingTop: Dp = 0.dp,
     paddingEnd: Dp = 0.dp,
-    textColor: Color = Color.Black
+    textColor: Color = Color.Black,
+    textAlign: TextAlign? = null
 ) {
     Text(
         modifier = Modifier.padding(paddingStart, paddingTop, paddingEnd, paddingBottom),
         text = text,
         fontSize = textSize,
         fontWeight = textWeight,
-        color = textColor
+        color = textColor,
+        textAlign = textAlign
     )
 }

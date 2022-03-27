@@ -23,4 +23,13 @@
     <string name="profile_registration_screen_sub_title">It will help us to know more about you!</string>
     <string name="profile_registration_screen_title">Let’s complete your profile</string>
     <string name="profile_section_description">Profile Section</string>
+    <string name="confirm">Confirm</string>
+    <string name="improve_shape">Improve Shape</string>
+    <string name="lean_and_tone">Lean &amp; Tone</string>
+    <string name="lose_a_fat">Lose a Fat</string>
+    <string name="improve_shape_description">I have a low amount of body fat and need want to build more muscle</string>
+    <string name="lean_and_tone_description">I have a low amount of body fat and need want to build more muscle</string>
+    <string name="lose_a_fat_description">I have a low amount of body fat and need want to build more muscle</string>
+    <string name="what_is_your_goal">What is your goal ?</string>
+    <string name="help_choose_best_program">It will help us to choose a best \nprogram for you</string>
 </resources>
