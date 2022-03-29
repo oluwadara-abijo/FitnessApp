@@ -17,14 +17,16 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.dara.fitnessapp.Onboarding
+import androidx.navigation.NavController
 import com.dara.fitnessapp.R
+import com.dara.fitnessapp.model.Onboarding
 import com.dara.fitnessapp.ui.theme.GreyText
 import com.dara.fitnessapp.ui.theme.PurpleDark
 import com.dara.fitnessapp.ui.theme.PurpleLight
+import com.dara.fitnessapp.utils.Constants
 
 @Composable
-fun OnboardingScreen(action: () -> Unit) {
+fun OnboardingScreen(navController: NavController) {
     val onboardingScreens = listOf(
         Onboarding(
             R.drawable.ic_track_goal,
@@ -45,21 +47,26 @@ fun OnboardingScreen(action: () -> Unit) {
         )
     )
 
-    ShowOnboardingScreen(onboardingScreens, action)
+    ShowOnboardingScreen(onboardingScreens, navController)
 }
 
 @Composable
-fun ShowOnboardingScreen(screens: List<Onboarding>, action: () -> Unit) {
+fun ShowOnboardingScreen(screens: List<Onboarding>, navController: NavController) {
 
     var pageCount by remember { mutableStateOf(0) }
 
     when (pageCount) {
         0 -> SplashScreen(onGetStartedClickedClicked = { pageCount++ })
-        1, 2, 3, 4 -> OnboardingSteps(
+
+        1, 2, 3 -> OnboardingSteps(
             onNextClicked = { pageCount++ },
             onboarding = screens[pageCount - 1]
         )
-        else -> action.invoke()
+
+        4 -> OnboardingSteps(
+            onNextClicked = { navController.navigate(Constants.REGISTRATION_ROUTE) },
+            onboarding = screens[pageCount - 1]
+        )
 
     }
 }
@@ -185,6 +192,8 @@ fun OnboardingSteps(
                     )
                 }
             }
+
+            Spacer(modifier = Modifier.padding(15.dp))
 
         }
     }
