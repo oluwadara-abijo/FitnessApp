@@ -1,9 +1,11 @@
-package com.dara.fitnessapp.ui.theme
+package com.dara.fitnessapp.ui.screens
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -17,9 +19,12 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.dara.fitnessapp.Onboarding
 import com.dara.fitnessapp.R
+import com.dara.fitnessapp.ui.theme.GreyText
+import com.dara.fitnessapp.ui.theme.PurpleDark
+import com.dara.fitnessapp.ui.theme.PurpleLight
 
 @Composable
-fun OnboardingScreen() {
+fun OnboardingScreen(action: () -> Unit) {
     val onboardingScreens = listOf(
         Onboarding(
             R.drawable.ic_track_goal,
@@ -40,11 +45,11 @@ fun OnboardingScreen() {
         )
     )
 
-    ShowOnboardingScreen(onboardingScreens)
+    ShowOnboardingScreen(onboardingScreens, action)
 }
 
 @Composable
-fun ShowOnboardingScreen(screens: List<Onboarding>) {
+fun ShowOnboardingScreen(screens: List<Onboarding>, action: () -> Unit) {
 
     var pageCount by remember { mutableStateOf(0) }
 
@@ -54,7 +59,7 @@ fun ShowOnboardingScreen(screens: List<Onboarding>) {
             onNextClicked = { pageCount++ },
             onboarding = screens[pageCount - 1]
         )
-        else -> return
+        else -> action.invoke()
 
     }
 }
@@ -119,64 +124,68 @@ fun SplashScreen(onGetStartedClickedClicked: () -> Unit) {
 
 @Composable
 fun OnboardingSteps(
-    onboarding: Onboarding,
+    onboarding: Onboarding?,
     onNextClicked: () -> Unit
 ) {
-    Column(
-        modifier = Modifier.fillMaxSize(),
-    ) {
-        Image(
-            painterResource(id = onboarding.imageResource),
-            contentDescription = stringResource(R.string.track_your_goal),
-            modifier = Modifier.fillMaxWidth(),
-            contentScale = ContentScale.FillWidth
-        )
-
-        Text(
-            text = onboarding.primaryText,
-            style = MaterialTheme.typography.h2,
-            modifier = Modifier.padding(top = 48.dp, start = 32.dp)
-        )
-
-        Text(
-            text = onboarding.secondaryText,
-            style = MaterialTheme.typography.subtitle1,
-            fontSize = 18.sp,
-            modifier = Modifier.padding(vertical = 16.dp, horizontal = 32.dp)
-        )
-
-        Button(
-            onClick = onNextClicked,
+    if (onboarding != null) {
+        Column(
             modifier = Modifier
-                .padding(end = 32.dp, top = 64.dp)
-                .size(50.dp)
-                .align(Alignment.End),
-            shape = RoundedCornerShape(64.dp),
-            colors = ButtonDefaults.buttonColors(backgroundColor = Color.Transparent),
-            contentPadding = PaddingValues(),
+                .fillMaxSize()
+                .verticalScroll(rememberScrollState()),
         ) {
-            Box(
+            Image(
+                painterResource(id = onboarding.imageResource),
+                contentDescription = stringResource(R.string.track_your_goal),
+                modifier = Modifier.fillMaxWidth(),
+                contentScale = ContentScale.FillWidth
+            )
+
+            Text(
+                text = onboarding.primaryText,
+                style = MaterialTheme.typography.h2,
+                modifier = Modifier.padding(top = 48.dp, start = 32.dp)
+            )
+
+            Text(
+                text = onboarding.secondaryText,
+                style = MaterialTheme.typography.subtitle1,
+                fontSize = 18.sp,
+                modifier = Modifier.padding(vertical = 16.dp, horizontal = 32.dp)
+            )
+
+            Button(
+                onClick = onNextClicked,
                 modifier = Modifier
-                    .background(
-                        brush = Brush.horizontalGradient(
-                            listOf(
-                                PurpleLight,
-                                PurpleDark
+                    .padding(end = 32.dp, top = 64.dp)
+                    .size(50.dp)
+                    .align(Alignment.End),
+                shape = RoundedCornerShape(64.dp),
+                colors = ButtonDefaults.buttonColors(backgroundColor = Color.Transparent),
+                contentPadding = PaddingValues(),
+            ) {
+                Box(
+                    modifier = Modifier
+                        .background(
+                            brush = Brush.horizontalGradient(
+                                listOf(
+                                    PurpleLight,
+                                    PurpleDark
+                                )
                             )
                         )
+                        .fillMaxWidth()
+                        .padding(horizontal = 16.dp, vertical = 16.dp),
+                    contentAlignment = Alignment.Center
+
+                ) {
+
+                    Image(
+                        painterResource(id = R.drawable.ic_baseline_keyboard_arrow_right),
+                        contentDescription = stringResource(R.string.next),
                     )
-                    .fillMaxWidth()
-                    .padding(horizontal = 16.dp, vertical = 16.dp),
-                contentAlignment = Alignment.Center
-
-            ) {
-
-                Image(
-                    painterResource(id = R.drawable.ic_baseline_keyboard_arrow_right),
-                    contentDescription = stringResource(R.string.next),
-                )
+                }
             }
-        }
 
+        }
     }
 }
