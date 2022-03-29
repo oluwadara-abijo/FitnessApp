@@ -1,5 +1,16 @@
 <resources>
     <string name="app_name">Fitness App</string>
+    <string name="logo">Logo</string>
+    <string name="everybody_can_train">Everybody Can Train</string>
+    <string name="get_started">Get Started</string>
+    <string name="track_your_goal">Track Your Goal</string>
+    <string name="track_your_goal_caption">Don\'t worry if you have trouble determining your goals, We can help you determine your goals and track your goals</string>
+    <string name="get_burn">Get Burn</string>
+    <string name="eat_well">Eat Well</string>
+    <string name="get_burn_caption">Let’s keep burning, to achieve yours goals, it hurts only temporarily, if you give up now you will be in pain forever</string>
+    <string name="eat_well_caption">Let\'s start a healthy lifestyle with us, we can determine your diet every day. healthy eating is fun</string>
+    <string name="improve_sleep_quality_caption">Improve the quality of your sleep with us, good quality sleep can bring a good mood in the morning</string>
+    <string name="improve_sleep_quality">Improve Sleep Quality</string>
     <string name="hey_here">Hey there</string>
     <string name="create_an_account">Create an Account</string>
     <string name="first_name">First Name</string>
