@@ -37,9 +37,6 @@ class MainActivity : ComponentActivity() {
         }
     }
 
-    companion object {
-    }
-
 }
 
 @Preview(showBackground = true)
