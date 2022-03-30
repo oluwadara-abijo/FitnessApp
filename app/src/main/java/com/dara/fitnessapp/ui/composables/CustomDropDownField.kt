@@ -9,7 +9,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowDropDown
-import androidx.compose.material.icons.filled.ArrowDropUp
+import androidx.compose.material.icons.filled.KeyboardArrowUp
 import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Modifier
@@ -39,7 +39,7 @@ fun CustomDropDownField(
     var fieldSize by remember { mutableStateOf(Size.Zero) }
 
     val icon = if (isExpanded)
-        Icons.Filled.ArrowDropUp else Icons.Filled.ArrowDropDown
+        Icons.Filled.KeyboardArrowUp else Icons.Filled.ArrowDropDown
 
 
     Column() {
