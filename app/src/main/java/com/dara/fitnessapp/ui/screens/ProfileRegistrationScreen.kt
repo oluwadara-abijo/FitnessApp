@@ -15,19 +15,22 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.dara.fitnessapp.R
 import com.dara.fitnessapp.ui.composables.*
 import com.dara.fitnessapp.ui.theme.BluePrimary
 import com.dara.fitnessapp.ui.theme.BlueSecondary
 import com.dara.fitnessapp.ui.theme.PinkPrimary
 import com.dara.fitnessapp.ui.theme.PinkSecondary
+import com.dara.fitnessapp.utils.Constants
 
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
-fun ProfileRegistrationScreen() {
+fun ProfileRegistrationScreen(navController: NavController) {
 
     Column(
         modifier = Modifier
@@ -143,8 +146,15 @@ fun ProfileRegistrationScreen() {
                 )
             )
         ) {
+            navController.navigate(Constants.LOG_IN_ROUTE)
         }
 
         Spacer(modifier = Modifier.padding(15.dp))
     }
+}
+
+@Preview
+@Composable
+fun PreviewProfileRegistrationScreen() {
+
 }
