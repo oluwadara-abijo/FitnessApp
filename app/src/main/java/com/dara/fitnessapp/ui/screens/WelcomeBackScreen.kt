@@ -16,14 +16,18 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.dara.fitnessapp.R
 import com.dara.fitnessapp.ui.composables.CustomGradientButton
 import com.dara.fitnessapp.ui.composables.CustomText
 import com.dara.fitnessapp.ui.theme.BluePrimary
 import com.dara.fitnessapp.ui.theme.BlueSecondary
+import com.dara.fitnessapp.utils.Constants
 
 @Composable
-fun WelcomeBackScreen() {
+fun WelcomeBackScreen(
+    navController: NavController
+) {
     Column(
         modifier = Modifier.fillMaxSize(),
     ) {
@@ -81,7 +85,9 @@ fun WelcomeBackScreen() {
                         )
                     ),
                     paddingHorizontal = 24.dp
-                ) {}
+                ) {
+                    navController.navigate(Constants.CALORIE_ROUTE)
+                }
 
                 Spacer(modifier = Modifier.padding(8.dp))
 
