@@ -43,4 +43,8 @@
     <string name="lose_a_fat_description">I have a low amount of body fat and need want to build more muscle</string>
     <string name="what_is_your_goal">What is your goal ?</string>
     <string name="help_choose_best_program">It will help us to choose a best \nprogram for you</string>
+    <string name="welcome_back">Welcome Back</string>
+    <string name="welcome_back_desc">You are all set now, let’s reach your \ngoals together with us</string>
+    <string name="go_to_home">Go To Home</string>
+    <string name="welcome_stefani">Welcome, Stefani</string>
 </resources>
